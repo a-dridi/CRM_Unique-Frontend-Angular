@@ -4,7 +4,7 @@ Saves the API access settings
 export class ApiConfig {
 
     //Add no tailing or leading slashes
-    private server = "https://crmserver";
+    private server = "https://server";
     private baseBackendApplicationUri="crmbackend";
     private baseApiUri = "api";
 

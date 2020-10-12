@@ -32,6 +32,7 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DataViewModule } from 'primeng/dataview';
 import {MatListModule} from '@angular/material/list'; 
+import { CommunicationTypeService } from './services/communicationtype.service';
 
 
 @NgModule({
@@ -72,7 +73,7 @@ import {MatListModule} from '@angular/material/list';
     DataViewModule,
     MatListModule
   ],
-  providers: [CustomerService, ApiConfig, TranslateService, AppLanguages, AppLanguageLoaderHelper, MessageService],
+  providers: [CommunicationTypeService, CustomerService, ApiConfig, TranslateService, AppLanguages, AppLanguageLoaderHelper, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

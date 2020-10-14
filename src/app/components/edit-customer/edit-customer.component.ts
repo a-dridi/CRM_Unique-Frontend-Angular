@@ -9,6 +9,10 @@ import { CustomerNote } from 'src/app/model/customernote';
 import { CommunicationTypeService } from 'src/app/services/communicationtype.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Countries } from 'src/app/util/countries';
+import { faRoad, faSuitcase, faUser, faMapMarkerAlt, faCity, faGlobeAmericas, faAt, faPhone, faMoneyCheck, faUniversity, faMoneyCheckAlt, faShareAlt, faLanguage, faClock, faComments, faStickyNote, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faUser as farUser, } from '@fortawesome/free-regular-svg-icons';
+import { faInternetExplorer, faFacebook, faTwitter, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons';
+import { Timezones } from 'src/app/util/timezones';
 
 @Component({
   selector: 'app-edit-customer',
@@ -22,6 +26,7 @@ export class EditCustomerComponent implements OnInit {
   successMessageDescriptionSaveCustomer;
 
   countries = [];
+  timezones = [];
   communicationMessageSortOrder: number;
   communicationMessageSortOptions: SelectItem[];
   communicationMessageSortField: string;
@@ -55,7 +60,7 @@ export class EditCustomerComponent implements OnInit {
   editXing: string;
   editSocialMedia: string;
   editLanguage: string;
-  editTimezone: string;
+  editTimezone: string = "UTC-00:00";
   editCustomerNote: string;
   newCommunicationMessageCommunicationType: CommunicationType;
   newCommunicationMessageMessage: string;
@@ -64,9 +69,35 @@ export class EditCustomerComponent implements OnInit {
   addCustomerNoteDescription: string;
   addCustomerNoteUrl: string;
 
+  //Icons
+  faRoad = faRoad;
+  faSuitcase = faSuitcase;
+  faUser = faUser;
+  farUser = farUser;
+  faMapMarkerAlt = faMapMarkerAlt;
+  faCity = faCity;
+  faGlobeAmericas = faGlobeAmericas;
+  faAt = faAt;
+  faPhone = faPhone;
+  faInternetExplorer = faInternetExplorer;
+  faMoneyCheck = faMoneyCheck;
+  faUniversity = faUniversity;
+  faMoneyCheckAlt = faMoneyCheckAlt;
+  faFacebook = faFacebook;
+  faTwitter = faTwitter;
+  faLinkedin = faLinkedin;
+  faXing = faXing;
+  faShareAlt = faShareAlt;
+  faLanguage = faLanguage;
+  faClock = faClock;
+  faComments = faComments;
+  faStickyNote = faStickyNote;
+  faCheck = faCheck;
 
-  constructor(private communicationTypeService: CommunicationTypeService, countries: Countries, private customerService: CustomerService, public translate: TranslateService, private router: Router, private route: ActivatedRoute, private messageService: MessageService) {
+
+  constructor(timezones: Timezones, private communicationTypeService: CommunicationTypeService, countries: Countries, private customerService: CustomerService, public translate: TranslateService, private router: Router, private route: ActivatedRoute, private messageService: MessageService) {
     this.countries = countries.countriesArray;
+    this.timezones = timezones.timezonesArray;
   }
 
   ngOnInit(): void {

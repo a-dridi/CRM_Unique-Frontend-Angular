@@ -31,9 +31,11 @@ import { AgoDateStringFormatPipe } from './pipe/ago-date-string-format.pipe';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DataViewModule } from 'primeng/dataview';
-import {MatListModule} from '@angular/material/list'; 
+import { MatListModule } from '@angular/material/list';
 import { CommunicationTypeService } from './services/communicationtype.service';
-
+import { Countries } from './util/countries';
+import { Timezones } from './util/timezones';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -71,9 +73,10 @@ import { CommunicationTypeService } from './services/communicationtype.service';
     ChipsModule,
     MatSidenavModule,
     DataViewModule,
-    MatListModule
+    MatListModule,
+    FontAwesomeModule
   ],
-  providers: [CommunicationTypeService, CustomerService, ApiConfig, TranslateService, AppLanguages, AppLanguageLoaderHelper, MessageService],
+  providers: [Countries, Timezones, CommunicationTypeService, CustomerService, ApiConfig, TranslateService, AppLanguages, AppLanguageLoaderHelper, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

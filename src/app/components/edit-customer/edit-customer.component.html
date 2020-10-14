@@ -4,205 +4,277 @@
     <div class="p-grid">
         <!--Left Side - Customer Details -->
         <div class="p-col-12 p-md-12 p-lg-6">
-            <div class="p-grid p-fluid">
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="pi pi-briefcase"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.companyNameTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.companyNameTitle' | translate}}"
-                            value="editCompanyName">
+            <div class="field-group">
+                <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faSuitcase"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.companyNameTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.companyNameTitle' | translate}}"
+                                [(ngModel)]="editCompanyName">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.forenameTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.forenameTitle' | translate}}"
-                            value="editForename">
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faUser"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.forenameTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.forenameTitle' | translate}}"
+                                [(ngModel)]="editForename">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.surnameTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.surnameTitle' | translate}}"
-                            value="editSurname">
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="farUser"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.surnameTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.surnameTitle' | translate}}"
+                                [(ngModel)]="editSurname">
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="p-col-12 p-md-3">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-road"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.streetTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.streetTitle' | translate}}"
-                            value="editStreet">
+            <div class="field-group">
+                <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faRoad"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.streetTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.streetTitle' | translate}}"
+                                [(ngModel)]="editStreet">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-3">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-map-marker-alt"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.postcodeTitle' | translate}}</span></span>
-                        <p-inputNumber [(ngModel)]="editPostcode" mode="decimal" [useGrouping]="false"></p-inputNumber>
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faMapMarkerAlt"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.postcodeTitle' | translate}}</span>
+                            </span>
+                            <p-inputNumber class="custom-field-full-width" [(ngModel)]="editPostcode" mode="decimal"
+                                [useGrouping]="false" placeholder="{{'editCustomer.postcodeTitle' | translate}}">
+                            </p-inputNumber>
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-3">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-city"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.cityTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.cityTitle' | translate}}"
-                            value="editCity">
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faCity"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.cityTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.cityTitle' | translate}}"
+                                [(ngModel)]="editCity">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-3">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-city"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.countryTitle' | translate}}</span></span>
-                        <p-dropdown [options]="countries" [(ngModel)]="editCountry" [filter]="true" editable="true">
-                            <ng-template pTemplate="selectedItem">
-                                <div class="country-item country-item-value" *ngIf="editCountry">
-                                    <div>{{editCountry}}</div>
-                                </div>
-                            </ng-template>
-                            <ng-template let-country pTemplate="item">
-                                <div class="country-item">
-                                    <div>{{country.value.name}}</div>
-                                </div>
-                            </ng-template>
-                        </p-dropdown>
+                    <div class="p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faGlobeAmericas"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.countryTitle' | translate}}</span>
+                            </span>
+                            <p-dropdown class="custom-field-full-width" [options]="countries" [(ngModel)]="editCountry"
+                                [filter]="true" editable="true">
+                                <ng-template pTemplate="selectedItem">
+                                    <div class="country-item country-item-value" *ngIf="editCountry">
+                                        <div>{{countries[0].name}}</div>
+                                    </div>
+                                </ng-template>
+                                <ng-template let-country pTemplate="item">
+                                    <div class="country-item">
+                                        <div>{{country.name}}</div>
+                                    </div>
+                                </ng-template>
+                            </p-dropdown>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-at"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.emailTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.emailTitle' | translate}}"
-                            value="editEmail">
+            <div class="field-group">
+                <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faAt"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.emailTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.emailTitle' | translate}}"
+                                [(ngModel)]="editEmail">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-phone"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.telephoneTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.telephoneTitle' | translate}}"
-                            value="editTelephone">
+                    <div class="p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faPhone"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.telephoneTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.telephoneTitle' | translate}}"
+                                [(ngModel)]="editTelephone">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-globe-americas"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.websiteTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.websiteTitle' | translate}}"
-                            value="editWebsite">
+                    <div class="p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faInternetExplorer"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.websiteTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.websiteTitle' | translate}}"
+                                [(ngModel)]="editWebsite">
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-money-check-alt"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.ibanTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.ibanTitle' | translate}}"
-                            value="editIban">
+            <div class="field-group">
+                <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faMoneyCheck"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.ibanTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.ibanTitle' | translate}}"
+                                [(ngModel)]="editIban">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-university"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.bicTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.bicTitle' | translate}}"
-                            value="editBic">
+                    <div class="p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faUniversity"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.bicTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.bicTitle' | translate}}"
+                                [(ngModel)]="editBic">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-money-check"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.bankInformationTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.bankInformationTitle' | translate}}"
-                            value="editBankInformation">
+                    <div class="p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faMoneyCheckAlt"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.bankInformationTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText
+                                placeholder="{{'editCustomer.bankInformationTitle' | translate}}"
+                                [(ngModel)]="editBankInformation">
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="p-col-12 p-md-3">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fab fa-facebook-square"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.facebookSocialTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.facebookSocialTitle' | translate}}"
-                            value="editFacebook">
+            <div class="field-group">
+                <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faFacebook"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.facebookSocialTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText
+                                placeholder="{{'editCustomer.facebookSocialTitle' | translate}}"
+                                [(ngModel)]="editFacebook">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-3">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fab fa-twitter-square"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.twitterSocialTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.twitterSocialTitle' | translate}}"
-                            value="editTwitter">
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faTwitter"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.twitterSocialTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText
+                                placeholder="{{'editCustomer.twitterSocialTitle' | translate}}"
+                                [(ngModel)]="editTwitter">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-3">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fab fa-linkedin"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.linkedInSocialTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.linkedInSocialTitle' | translate}}"
-                            value="editLinkedin">
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faLinkedin"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.linkedInSocialTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText
+                                placeholder="{{'editCustomer.linkedInSocialTitle' | translate}}"
+                                [(ngModel)]="editLinkedin">
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faXing"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.xingSocialTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.xingSocialTitle' | translate}}"
+                                [(ngModel)]="editXing">
+                        </div>
                     </div>
                 </div>
-                <div class="p-col-12 p-md-3">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fab fa-xing-square"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.xingSocialTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.xingSocialTitle' | translate}}"
-                            value="editXing">
-                    </div>
-                </div>
+            </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-share-alt-square"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.socialMediaTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.socialMediaTitle' | translate}}"
-                            value="editSocialMedia">
+            <div class="field-group">
+                <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-12">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faShareAlt"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.socialMediaTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.socialMediaTitle' | translate}}"
+                                [(ngModel)]="editSocialMedia">
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-clock"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.languageTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.languageTitle' | translate}}"
-                            value="editLanguage">
+            <div class="field-group">
+                <div class="p-grid p-fluid">
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faLanguage"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.languageTitle' | translate}}</span>
+                            </span>
+                            <input type="text" pInputText placeholder="{{'editCustomer.languageTitle' | translate}}"
+                                [(ngModel)]="editLanguage">
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-col-12 p-md-4">
-                    <div class="p-inputgroup">
-                        <span class="p-inputgroup-addon"><i class="fas fa-language"></i><span
-                                class="inputgroup-custom-text">{{'editCustomer.timezoneTitle' | translate}}</span></span>
-                        <input type="text" pInputText placeholder="{{'editCustomer.timezoneTitle' | translate}}"
-                            value="editTimezone">
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-inputgroup">
+                            <span class="p-inputgroup-addon">
+                                <fa-icon [icon]="faClock"></fa-icon><span
+                                    class="inputgroup-custom-text">{{'editCustomer.timezoneTitle' | translate}}</span>
+                            </span>
+                            <p-dropdown class="custom-field-full-width" [options]="timezones" [(ngModel)]="editTimezone"
+                                [filter]="true" editable="true">
+                                <ng-template pTemplate="selectedItem">
+                                    <div class="timezone-item timezone-item-value" *ngIf="editTimezone">
+                                        <div>{{timezones[0].name}}</div>
+                                    </div>
+                                </ng-template>
+                                <ng-template let-timezone pTemplate="item">
+                                    <div class="timezone-item">
+                                        <div>{{timezone.timezone}}</div>
+                                    </div>
+                                </ng-template>
+                            </p-dropdown>
+                        </div>
                     </div>
-                </div>
-
-                <div class="p-col-12 p-md-12">
-                    <div class="p-inputgroup">
-                        <textarea rows="5" cols="30" pInputTextarea
-                            placeholder="{{'editCustomer.noteTitle' | translate}}" value="editCustomerNote"></textarea>
-                    </div>
-                </div>
-
-                <div class="p-col-12 p-md-12">
-                    <button class="save-button" pButton type="button" icon="pi pi-check" iconPos="left"
-                        label="{{'customers.saveButton' | translate}}" (click)="saveCustomer()"></button>
                 </div>
             </div>
         </div>
@@ -211,10 +283,19 @@
             <div class="p-grid p-fluid">
 
                 <!-- Communication Messages -->
-                <div class="p-col-12 p-md-12 p-shadow-5 ">
+                <div class="p-col-12 p-md-12 p-shadow-5 window-section">
+
+                    <div class="sub-window-header">
+                        <span class="sub-window-logo">
+                            <fa-icon [icon]="faComments"></fa-icon>
+                        </span>
+                        <span class="sub-window-title">
+                            {{'editCustomer.communicationMessageSectionTitle' | translate}}</span>
+                    </div>
+
                     <p-dataView #communicationMessages [value]="customerCommunicationMessagesArray" [paginator]="true"
-                        [rows]="1" filterBy="communicationType.title" [sortField]="communicationMessageSortField" [sortOrder]="communicationMessageSortOrder"
-                        layout="list">
+                        [rows]="1" filterBy="communicationType.title" [sortField]="communicationMessageSortField"
+                        [sortOrder]="communicationMessageSortOrder" layout="list">
                         <ng-template pTemplate="header">
                             <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
                                 <p-dropdown [options]="communicationMessageSortOptions"
@@ -256,7 +337,7 @@
                             [(ngModel)]="newCommunicationMessageCommunicationType" [filter]="true" editable="true">
                             <ng-template let-communicationtype pTemplate="item">
                                 <div class="communicationtype-item">
-                                    <div>{{communicationtype.value.name}}</div>
+                                    <div>{{communicationtype.name}}</div>
                                 </div>
                             </ng-template>
                         </p-dropdown>
@@ -266,7 +347,7 @@
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"><i class="fas fa-tags"></i><span
                                     class="inputgroup-custom-text">{{'editCustomer.communicationMessageTags' | translate}}</span></span>
-                            <p-chips [(ngModel)]="newCommunicationMessageTags" separator="," max="4"></p-chips>
+                            <p-chips class="custom-field-chips-width" [(ngModel)]="newCommunicationMessageTags" separator="," max="4"></p-chips>
                         </div>
                         <button class="add-communicationmessage-button" pButton type="button" icon="pi pi-plus"
                             iconPos="left" label="{{'customers.saveButton' | translate}}"
@@ -275,9 +356,19 @@
                 </div>
 
                 <!-- Customer Notes -->
-                <div class="p-col-12 p-md-12 p-shadow-5 ">
+                <div class="p-col-12 p-md-12 p-shadow-5 window-section">
+
+                    <div class="sub-window-header">
+                        <span class="sub-window-logo">
+                            <fa-icon [icon]="faStickyNote"></fa-icon>
+                        </span>
+                        <span class="sub-window-title">
+                            {{'editCustomer.customerNoteSectionTitle' | translate}}</span>
+                    </div>
+
                     <p-dataView #customerNotes [value]="customerNotesArray" [paginator]="true" [rows]="1"
-                        filterBy="title" [sortField]="customerNoteSortField" [sortOrder]="customerNoteSortOrder" layout="list">
+                        filterBy="title" [sortField]="customerNoteSortField" [sortOrder]="customerNoteSortOrder"
+                        layout="list">
                         <ng-template pTemplate="header">
                             <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
                                 <p-dropdown [options]="customerNoteSortOptions"
@@ -313,7 +404,7 @@
                                     class="inputgroup-custom-text">{{'editCustomer.customerNotesAddTitle' | translate}}</span></span>
                             <input type="text" pInputText
                                 placeholder="{{'editCustomer.customerNotesAddTitle' | translate}}"
-                                value="addCustomerNoteTitle">
+                                [(ngModel)]="addCustomerNoteTitle">
                         </div>
                         <textarea rows="5" cols="30" pInputTextarea
                             placeholder="{{'editCustomer.customerNotesAddDescription' | translate}}"
@@ -323,10 +414,10 @@
                                     class="inputgroup-custom-text">{{'editCustomer.customerNotesAddUrl' | translate}}</span></span>
                             <input type="text" pInputText
                                 placeholder="{{'editCustomer.customerNotesAddUrl' | translate}}"
-                                value="addCustomerNoteUrl">
+                                [(ngModel)]="addCustomerNoteUrl">
                         </div>
-                        <button class="add-customernote-button" pButton type="button" icon="pi pi-plus"
-                            iconPos="left" label="{{'editCustomer.customerNotesAddButton' | translate}}"
+                        <button class="add-customernote-button" pButton type="button" icon="pi pi-plus" iconPos="left"
+                            label="{{'editCustomer.customerNotesAddButton' | translate}}"
                             (click)="addNewCustomerNote()"></button>
                     </div>
                 </div>

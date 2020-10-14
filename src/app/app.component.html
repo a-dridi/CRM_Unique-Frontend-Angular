@@ -1,59 +1,69 @@
-<mat-toolbar id="app-header">
-  <div class="top-section">
-    <div class="menu-toggle">
-      <button class="menu-toggle-button" mat-icon-button (click)="snav.toggle()">
-        <mat-icon class="menu-toggle-icon">menu</mat-icon>
-      </button>
-    </div>
-    <div class="appLogo">
-      <div id="titleAppLogo"> <a href="/"><span i18n>CRM Unique</span></a>
+<div class="app-page" [class.app-is-mobile]="responsiveMobileQuery.matches">
+
+  <mat-toolbar id="app-header">
+    <div class="top-section">
+      <div class="menu-toggle">
+        <button class="menu-toggle-button" mat-icon-button (click)="snav.toggle()">
+          <mat-icon class="menu-toggle-icon">menu</mat-icon>
+        </button>
+      </div>
+      <div class="appLogo">
+        <div id="titleAppLogo"> <a href="/"><span i18n>CRM Unique</span></a>
+        </div>
+      </div>
+      <div class="languageChooser">
+        <mat-form-field>
+          <mat-select [(ngModel)]="selectedUserLanguageName" (ngModelChange)="changeSelectedLanguage($event)"
+            placeholder="{{selectedUserLanguageName}}">
+            <mat-option *ngFor="let language of availableLanguages" [value]="language">
+              {{language.languageName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
     </div>
-    <div class="languageChooser">
-      <mat-form-field>
-        <mat-select [(ngModel)]="selectedUserLanguageName" (ngModelChange)="changeSelectedLanguage($event)"
-          placeholder="{{selectedUserLanguageName}}">
-          <mat-option *ngFor="let language of availableLanguages" [value]="language">
-            {{language.languageName}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-  </div>
-  <br>
-</mat-toolbar>
-<div id="app-content">
-  <router-outlet></router-outlet>
+    <br>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="app-sidenav-container" [style.marginTop.px]="responsiveMobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="responsiveMobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="responsiveMobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list class="nav-menu-content">
+        <a mat-list-item routerLink="/customers" class="nav-menu-item"><i class="pi pi-users"></i> <span
+            class="menu-item-title">{{'siteMenu.customersMenuPoint' | translate}}</span></a>
+            <a mat-list-item routerLink="/communicationtype" class="nav-menu-item"><i class="pi pi-tag"></i> <span
+              class="menu-item-title">{{'siteMenu.communicationTypesMenuPoint' | translate}}</span></a>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div id="app-content">
+        <router-outlet></router-outlet>
+      </div>
+      <mat-toolbar id="app-footer">
+        <mat-toolbar-row>
+          <span>Made with </span>
+          <mat-icon class="example-icon" aria-hidden="false" aria-label="heart icon"
+            style="margin-left: 5px; height:14px;font-size: 14px;">favorite</mat-icon>
+          <span>by a.dridi (github.com/a-dridi)</span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+          <div class="footer-links">
+            <div class="footer-link-element">
+              <a href="#">General Notice</a>
+            </div>
+            <div class="footer-link-element">
+              <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-link-element">
+              <a href="#">Contact</a>
+            </div>
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
 </div>
-<mat-toolbar id="app-footer">
-  <mat-toolbar-row>
-    <span>Made with </span>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="heart icon"
-      style="margin-left: 5px; height:14px;font-size: 14px;">favorite</mat-icon>
-    <span>by a.dridi (github.com/a-dridi)</span>
-  </mat-toolbar-row>
-  <mat-toolbar-row>
-    <div class="footer-links">
-      <div class="footer-link-element">
-        <a href="#">General Notice</a>
-      </div>
-      <div class="footer-link-element">
-        <a href="#">Privacy Policy</a>
-      </div>
-      <div class="footer-link-element">
-        <a href="#">Contact</a>
-      </div>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
-
-<mat-sidenav-container class="app-sidenav-container" [style.marginTop.px]="responsiveMobileQuery.matches ? 56 : 0">
-
-  <mat-sidenav #snav [mode]="responsiveMobileQuery.matches ? 'over' : 'side'"
-    [fixedInViewport]="responsiveMobileQuery.matches" fixedTopGap="56">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/customers">{{'siteMenu.customersMenuPoint' | translate}}</a>
-    </mat-nav-list>
-  </mat-sidenav>
-
-</mat-sidenav-container>

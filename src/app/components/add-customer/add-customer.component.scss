@@ -8,13 +8,22 @@
 }
 
 .inputgroup-custom-text {
-    margin-right: 7px;
+    margin-left: 7px;
 }
 
 .save-button {
     background-color: green;
     color: white;
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    padding: 5px 30px;
 }
+
+.save-button-label {
+    margin-left: 10px !important;
+}
+
 .message-list-detail {
     background-color: rgb(224, 224, 224);
     border-radius: 2px;
@@ -47,3 +56,50 @@
 .customernote-title{
     font-weight: bold;
 }
+
+.p-grid{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.number-field{
+    width: 70% !important;
+}
+
+.non-textfield {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.custom-field-full-width{
+    width: 100% !important;
+}
+
+.custom-field-chips-width{
+    width: 28rem !important;
+}
+
+.field-group{
+    margin-bottom: 30px;
+}
+
+.sub-window-header{
+    margin-bottom: 30px;
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.sub-window-logo{
+    margin-right: 5px;
+}
+
+.section-first-field{
+    margin-bottom: 5px;
+}
+
+.window-section{
+    margin-bottom: 40px;
+}
+
+

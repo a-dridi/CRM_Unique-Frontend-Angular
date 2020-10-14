@@ -33,10 +33,14 @@ export class AppComponent implements OnDestroy {
     this.responsiveMobileQuery.addEventListener("DOMContentLoaded", this.responsiveMobileQueryListener);
   }
 
+  ngOnDestroy(): void {
+    this.responsiveMobileQuery.removeEventListener("DOMContentLoaded", this.responsiveMobileQueryListener);
+  }
+
   /**
-   * Change translation to the selected language and save selected language in session.
-   * @param newSelectedLanguage 
-   */
+ * Change translation to the selected language and save selected language in session.
+ * @param newSelectedLanguage 
+ */
   changeSelectedLanguage(newSelectedLanguage) {
     this.selectedUserLanguageCode = newSelectedLanguage.code;
     this.selectedUserLanguageName = newSelectedLanguage.value;
@@ -45,7 +49,4 @@ export class AppComponent implements OnDestroy {
     this.selectedUserLanguageName = this.appLanguageLoaderHelper.getLanguageNameFromLanguageList(this.appLanguageLoaderHelper.userLanguageCode);
   }
 
-  ngOnDestroy(): void {
-    this.responsiveMobileQuery.removeEventListener("DOMContentLoaded", this.responsiveMobileQueryListener);
-  }
 }

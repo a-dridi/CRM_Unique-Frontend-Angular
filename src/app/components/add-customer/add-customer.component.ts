@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModuleFactoryLoader, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MessageService } from 'primeng/api';
@@ -6,6 +6,10 @@ import { CommunicationType } from 'src/app/model/communicationtype';
 import { CommunicationTypeService } from 'src/app/services/communicationtype.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Countries } from 'src/app/util/countries';
+import { faRoad, faSuitcase, faUser, faMapMarkerAlt, faCity, faGlobeAmericas, faAt, faPhone, faMoneyCheck, faUniversity, faMoneyCheckAlt, faShareAlt, faLanguage, faClock, faComments, faStickyNote, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faUser as farUser, } from '@fortawesome/free-regular-svg-icons';
+import { faInternetExplorer, faFacebook, faTwitter, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons';
+import { Timezones } from 'src/app/util/timezones';
 
 @Component({
   selector: 'app-add-customer',
@@ -17,6 +21,7 @@ export class AddCustomerComponent implements OnInit {
   errorMessageDescriptionSaveCustomer;
 
   countries = [];
+  timezones = [];
   communicationMessagesTypeArray: CommunicationType[] = [];
   addCompanyName: string;
   addForename: string;
@@ -24,7 +29,7 @@ export class AddCustomerComponent implements OnInit {
   addStreet: string;
   addPostcode: number;
   addCity: string;
-  addCountry: string;
+  addCountry: string = "Countries";
   addEmail: string;
   addTelephone: string;
   addWebsite: string;
@@ -37,7 +42,7 @@ export class AddCustomerComponent implements OnInit {
   addXing: string;
   addSocialMedia: string;
   addLanguage: string;
-  addTimezone: string;
+  addTimezone: string = "UTC-00:00";
   addCustomerNote: string;
   newCommunicationMessageCommunicationType: CommunicationType;
   newCommunicationMessageMessage: string;
@@ -46,9 +51,35 @@ export class AddCustomerComponent implements OnInit {
   addCustomerNoteDescription: string;
   addCustomerNoteUrl: string;
 
+  //Icons
+  faRoad = faRoad;
+  faSuitcase = faSuitcase;
+  faUser = faUser;
+  farUser = farUser;
+  faMapMarkerAlt = faMapMarkerAlt;
+  faCity = faCity;
+  faGlobeAmericas = faGlobeAmericas;
+  faAt = faAt;
+  faPhone = faPhone;
+  faInternetExplorer = faInternetExplorer;
+  faMoneyCheck = faMoneyCheck;
+  faUniversity = faUniversity;
+  faMoneyCheckAlt = faMoneyCheckAlt;
+  faFacebook = faFacebook;
+  faTwitter = faTwitter;
+  faLinkedin = faLinkedin;
+  faXing = faXing;
+  faShareAlt = faShareAlt;
+  faLanguage = faLanguage;
+  faClock = faClock;
+  faComments = faComments;
+  faStickyNote = faStickyNote;
+  faCheck = faCheck;
 
-  constructor(countries: Countries, private communicationTypeService: CommunicationTypeService, private customerService: CustomerService, public translate: TranslateService, private router: Router, private route: ActivatedRoute, private messageService: MessageService) {
+
+  constructor(countries: Countries, timezones: Timezones, private communicationTypeService: CommunicationTypeService, private customerService: CustomerService, public translate: TranslateService, private router: Router, private route: ActivatedRoute, private messageService: MessageService) {
     this.countries = countries.countriesArray;
+    this.timezones = timezones.timezonesArray;
   }
 
 

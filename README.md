@@ -3,7 +3,7 @@
 In development. 
 This is the Frontend part of the application "CRM Unique". It connects to the REST API of the backend of "CRM Unique".
 
-![Screenshot of Web App CRM Unique](https://raw.githubusercontent.com/a-dridi/CRM_Unique-Frontend-Angular/master/screenshot.PNG)
+![Screenshot of Web App CRM Unique](https://raw.githubusercontent.com/a-dridi/CRM_Unique-Frontend-Angular/main/screenshot.PNG)
 
 
 Use the Angular CLI to build this project. 

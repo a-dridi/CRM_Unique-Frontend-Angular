@@ -1,0 +1,68 @@
+<h3 class="header-text"><i class="pi pi-tag"></i> <span
+        class="header-text">{{'communicationtypes.siteTitle' | translate}}</span></h3>
+
+<p-toast position="top-center"></p-toast>
+
+<div class="card add-communicationtype">
+    <div class="p-grid">
+
+        <div class="p-col-12 p-md-12">
+            <div class="p-inputgroup group-field">
+                <span class="p-inputgroup-addon">
+                    <fa-icon [icon]="faHeading"></fa-icon><span
+                        class="inputgroup-custom-text">{{'communicationtypes.addCommunicationTypeTitle' | translate}}</span>
+                </span>
+                <input type="text" pInputText
+                    placeholder="{{'communicationtypes.addCommunicationTypeTitle' | translate}}"
+                    [(ngModel)]="addCommunicationTypeTitle">
+            </div>
+        </div>
+
+        <div class="p-col-12 p-md-12">
+            <div class="p-inputgroup group-field">
+                <span class="p-inputgroup-addon">
+                    <fa-icon [icon]="faTint"></fa-icon><span
+                        class="inputgroup-custom-text">{{'communicationtypes.addCommunicationTypeColorHex' | translate}}</span>
+                </span>
+                <p-colorPicker [(ngModel)]="addCommunicationTypeColorHex"></p-colorPicker>
+            </div>
+        </div>
+
+        <div class="p-col-12 p-md-12">
+            <button class="save-button" label=" " icon="" iconPos="left" pButton type="button"
+                (click)="addCommunicationtype()">
+                <span>
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                </span><span class="save-button-label">{{'communicationtypes.saveButton' | translate}}</span></button>
+        </div>
+
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="card all-communication-table">
+    <p-table [value]="communicationtypes" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+        currentPageReportTemplate="{first} - {last} / {totalRecords}"
+        styleClass="p-datatable-responsive-communicationtype">
+        <ng-template pTemplate="header">
+            <tr>
+                <th class="table-header">{{'communicationtypes.tableHeaderCommunicationtypeTitle' | translate}}</th>
+                <th class="table-header">{{'communicationtypes.tableHeaderColorHex' | translate}}</th>
+                <th class="table-header">{{'communicationtypes.tableCellEditButton' | translate}}</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-communicationtype>
+            <tr>
+                <td>{{communicationtype.title}}</td>
+                <td>{{communicationtype.colorHex}}</td>
+                <td>
+                    <button class="edit-button" pButton type="button" icon="pi pi-folder-open" iconPos="left"
+                        label="{{'communicationtypes.tableCellEditButton' | translate}}"
+                        (click)="editCommunicationtype(communicationtype.communicationTypeId)"></button>
+                    <button class="delete-button" pButton type="button" icon="pi pi-times-circle" iconPos="left"
+                        label="{{'communicationtypes.tableCellDeleteButton' | translate}}"
+                        (click)="deleteCommunicationtype(communicationtype.communicationTypeId)"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

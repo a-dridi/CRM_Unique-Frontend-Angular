@@ -1,0 +1,41 @@
+<h3 class="header-text"><i class="pi pi-tag"></i> <span
+        class="header-text">{{'editCommunicationtype.siteTitle' | translate}}</span></h3>
+
+<p-toast position="top-center"></p-toast>
+
+<div class="card edit-communicationtype">
+    <div class="p-grid">
+
+        <div class="p-col-12 p-md-12">
+            <div class="p-inputgroup group-field">
+                <span class="p-inputgroup-addon">
+                    <fa-icon [icon]="faHeading"></fa-icon><span
+                        class="inputgroup-custom-text">{{'editCommunicationtype.saveCommunicationTypeTitle' | translate}}</span>
+                </span>
+                <input type="text" pInputText
+                    placeholder="{{'editCommunicationtype.saveCommunicationTypeTitle' | translate}}"
+                    [(ngModel)]="saveCommunicationTypeTitle">
+            </div>
+        </div>
+
+        <div class="p-col-12 p-md-12">
+            <div class="p-inputgroup group-field">
+                <span class="p-inputgroup-addon">
+                    <fa-icon [icon]="faTint"></fa-icon><span
+                        class="inputgroup-custom-text">{{'editCommunicationtype.saveCommunicationTypeColorHex' | translate}}</span>
+                </span>
+                <p-colorPicker [(ngModel)]="saveCommunicationTypeColorHex"></p-colorPicker>
+            </div>
+        </div>
+
+        <div class="p-col-12 p-md-12">
+            <button class="save-button" label=" " icon="" iconPos="left" pButton type="button"
+                (click)="saveCommunicationtype()">
+                <span>
+                    <fa-icon [icon]="faCheck"></fa-icon>
+                </span><span
+                    class="save-button-label">{{'editCommunicationtype.saveButton' | translate}}</span></button>
+        </div>
+
+    </div>
+</div>

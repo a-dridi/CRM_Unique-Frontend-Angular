@@ -316,7 +316,7 @@
                             placeholder="{{'addCustomer.communicationMessageMessageTextarea' | translate}}"
                             [(ngModel)]="newCommunicationMessageMessage"></textarea>
                         <div class="p-inputgroup">
-                            <span class="p-inputgroup-addon"><i class="fas fa-tags"></i><span
+                            <span class="p-inputgroup-addon"> <fa-icon [icon]="faTags"></fa-icon><span
                                     class="inputgroup-custom-text">{{'addCustomer.communicationMessageTags' | translate}}</span></span>
                             <p-chips class="custom-field-chips-width" [(ngModel)]="newCommunicationMessageTags"
                                 separator="," max=4></p-chips>
@@ -336,7 +336,7 @@
 
                     <div class="add-customernote-form">
                         <div class="p-inputgroup section-first-field">
-                            <span class="p-inputgroup-addon"><i class="fas fa-heading"></i><span
+                            <span class="p-inputgroup-addon"> <fa-icon [icon]="faHeading"></fa-icon><span
                                     class="inputgroup-custom-text">{{'editCustomer.customerNotesAddTitle' | translate}}</span></span>
                             <input type="text" pInputText
                                 placeholder="{{'editCustomer.customerNotesAddTitle' | translate}}"
@@ -346,7 +346,7 @@
                             placeholder="{{'editCustomer.customerNotesAddDescription' | translate}}"
                             [(ngModel)]="addCustomerNoteDescription"></textarea>
                         <div class="p-inputgroup">
-                            <span class="p-inputgroup-addon"><i class="fas fa-link"></i><span
+                            <span class="p-inputgroup-addon"> <fa-icon [icon]="faLink"></fa-icon><span
                                     class="inputgroup-custom-text">{{'editCustomer.customerNotesAddUrl' | translate}}</span></span>
                             <input type="text" pInputText
                                 placeholder="{{'editCustomer.customerNotesAddUrl' | translate}}"

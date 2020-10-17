@@ -36,6 +36,10 @@ import { CommunicationTypeService } from './services/communicationtype.service';
 import { Countries } from './util/countries';
 import { Timezones } from './util/timezones';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommunicationtypesComponent } from './components/communicationtypes/communicationtypes.component';
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { MatDividerModule } from '@angular/material/divider';
+import { EditCommunicationtypeComponent } from './components/edit-communicationtype/edit-communicationtype.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AllcustomersComponent,
     EditCustomerComponent,
     AgoDateStringFormatPipe,
-    AddCustomerComponent
+    AddCustomerComponent,
+    CommunicationtypesComponent,
+    EditCommunicationtypeComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +80,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatSidenavModule,
     DataViewModule,
     MatListModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ColorPickerModule,
+    MatDividerModule
   ],
   providers: [Countries, Timezones, CommunicationTypeService, CustomerService, ApiConfig, TranslateService, AppLanguages, AppLanguageLoaderHelper, MessageService],
   bootstrap: [AppComponent]

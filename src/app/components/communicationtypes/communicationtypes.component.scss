@@ -1,0 +1,103 @@
+.header-text {
+    margin: 15px;
+    font-weight: bold;
+}
+
+.add-communicationtype{
+    margin-bottom: 15px;
+}
+
+.all-communication-table {
+    margin-top: 15px;
+}
+
+.pi {
+    font-size: 2rem !important;
+}
+
+.pi.pi-plus {
+    margin-right: 10px !important;
+}
+
+:host ::ng-deep {
+    .p-datatable-responsive-communicationtype .p-datatable-tbody > tr > td .p-column-title {
+        display: none;
+    }
+}
+
+.table-header {
+    background: rgba(63, 81, 181, 0.12);
+    border-color: rgba(63, 81, 181, 0.12);
+}
+
+.edit-button {
+    margin-right: 15px;
+    height: 40px;
+}
+
+.edit-button:hover {
+    background-color: #1b2979;
+}
+
+.delete-button {
+    color: white;
+    background-color: red;
+    height: 40px;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+.save-button {
+    background-color: green;
+    color: white;
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    padding: 5px 30px;
+}
+
+.save-button-label {
+    margin-left: 10px !important;
+}
+
+@media (min-width: 60rem) and (max-width: 87rem) {
+    .edit-button {
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    :host ::ng-deep {
+        .p-datatable {
+            &.p-datatable-responsive-communicationtype {
+                .p-datatable-thead > tr > th,
+                .p-datatable-tfoot > tr > td {
+                    display: none !important;
+                }
+
+                .p-datatable-tbody > tr > td {
+                    text-align: left;
+                    display: block;
+                    width: 100%;
+                    float: left;
+                    clear: left;
+                    border: 0 none;
+
+                    .p-column-title {
+                        padding: 0.4rem;
+                        min-width: 30%;
+                        display: inline-block;
+                        margin: -0.4em 1em -0.4em -0.4rem;
+                        font-weight: bold;
+                    }
+
+                    &:last-child {
+                        border-bottom: 1px solid var(--surface-d);
+                    }
+                }
+            }
+        }
+    }
+}

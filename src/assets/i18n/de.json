@@ -94,5 +94,9 @@
         "customerNotesAddDescription": "Note Description...",
         "customerNotesAddUrl": "Url",
         "customerNoteSortPlaceHolder": "Sort By Date"
+    },
+    "communicationtypes": {
+        "siteTitle": "Communication Types",
+        "addCommunicationTypeColorHex": "Color"
     }
 }

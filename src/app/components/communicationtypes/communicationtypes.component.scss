@@ -3,7 +3,7 @@
     font-weight: bold;
 }
 
-.add-communicationtype{
+.add-communicationtype {
     margin-bottom: 15px;
 }
 
@@ -56,6 +56,35 @@
     display: block;
     height: 50px;
     padding: 5px 30px;
+}
+
+.inputgroup-custom-text{
+    margin-left: 5px;
+}
+
+.input-group-section{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-inputgroup-addon {
+    border-right: 1px solid rgba(0, 0, 0, 0.38);
+}
+
+.group-field, .add-colorhex-section,  add-communicationtype-section{
+    margin: 1px 10px;
+    flex: auto;
+    flex-wrap: wrap;
+}
+
+.add-communicationtype-field {
+    width: 80%;
+    margin-left: 5px;
+}
+
+.p-colorpicker-preview {
+    height: 50px !important;
+    width: 70px !important;
 }
 
 .save-button-label {

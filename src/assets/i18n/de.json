@@ -4,14 +4,14 @@
         "communicationTypesMenuPoint": "Communication Types"
     },
     "customers": {
-        "siteTitle": "Kunden",
-        "addCustomerButtonText": "  Kunde hinzufügen",
-        "tableHeaderCompanyname": "Unternehmensname",
-        "tableHeaderForename": "Vorname",
-        "tableHeaderSurname": "Nachname",
-        "tableHeaderEmail": "E-Mail",
-        "tableHeaderPhone": "Telefonnr.",
-        "tableCellEditButton": "Bearbeiten",
+        "siteTitle": "Customers",
+        "addCustomerButtonText": "  Add Customer",
+        "tableHeaderCompanyname": "Company Name",
+        "tableHeaderForename": "Forename",
+        "tableHeaderSurname": "Surname",
+        "tableHeaderEmail": "Email",
+        "tableHeaderPhone": "Phone",
+        "tableCellEditButton": "Edit",
         "tableCellDeleteButton": "Delete"
     },
     "errorMessages": {
@@ -20,7 +20,13 @@
         "editCustomerUpdateTitle": "Update Error",
         "editCustomerUpdateDescription": "Customer could not be updated!",
         "addCustomerSaveTitle": "Saving Error",
-        "editCustomerSaveDescription": "Customer could not be added!"
+        "editCustomerSaveDescription": "Customer could not be added!",
+        "communicationtypeDeleteTitle": "Delete Error",
+        "communicationtypeDeleteDescription": "Communication Type could not be deleted!",
+        "communicationtypeUpdateTitle": "Update Error",
+        "communicationtypeUpdateDescription": "Communication Type could not be updated!",
+        "communicationtypeSaveTitle": "Saving Error",
+        "communicationtypeSaveDescription": "Communication Type could not be added!"
     },
     "editCustomer": {
         "siteTitle": "Edit Customer",
@@ -58,7 +64,11 @@
         "customerNotesAddTitle": "Title",
         "customerNotesAddDescription": "Note Description...",
         "customerNotesAddUrl": "Url",
-        "customerNotesAddButton": "Add note"
+        "customerNotesAddButton": "Add note",
+        "communicationMesssageSortOptionDateAsc": "Date Ascending",
+        "communicationMesssageSortOptionDateDesc": "Date Descending",
+        "customerNoteSortOptionDateAsc": "Date Ascending",
+        "customerNoteSortOptionDateDesc": "Date Descending"
     },
     "addCustomer": {
         "siteTitle": "New Customer",
@@ -97,6 +107,21 @@
     },
     "communicationtypes": {
         "siteTitle": "Communication Types",
-        "addCommunicationTypeColorHex": "Color"
+        "addCommunicationTypeTitle": "Communication Type",
+        "addCommunicationTypeColorHex": "Color",
+        "saveButton": "Add",
+        "tableHeaderCommunicationtypeTitle": "Communication Type",
+        "tableHeaderColorHex": "Color",
+        "tableCellEditButton": "Edit",
+        "tableCellDeleteButton": "Delete"
+    },
+    "editCommunicationtype":{
+        "siteTitle": "Communication Types",
+        "saveCommunicationTypeTitle": "Communication Type",
+        "saveCommunicationTypeColorHex": "Color",
+        "saveButton": "Save",
+        "tableHeaderCommunicationtypeTitle": "Communication Type",
+        "tableHeaderColorHex": "Color"
     }
+
 }

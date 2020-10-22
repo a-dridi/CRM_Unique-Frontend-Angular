@@ -6,7 +6,7 @@ import { CommunicationType } from 'src/app/model/communicationtype';
 import { CommunicationTypeService } from 'src/app/services/communicationtype.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Countries } from 'src/app/util/countries';
-import { faRoad, faSuitcase, faUser, faMapMarkerAlt, faCity, faGlobeAmericas, faAt, faPhone, faMoneyCheck, faUniversity, faMoneyCheckAlt, faShareAlt, faLanguage, faClock, faComments, faStickyNote, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faRoad, faSuitcase, faUser, faMapMarkerAlt, faCity, faGlobeAmericas, faAt, faPhone, faMoneyCheck, faUniversity, faMoneyCheckAlt, faShareAlt, faLanguage, faClock, faComments, faStickyNote, faCheck, faTags, faLink, faHeading } from '@fortawesome/free-solid-svg-icons';
 import { faUser as farUser, } from '@fortawesome/free-regular-svg-icons';
 import { faInternetExplorer, faFacebook, faTwitter, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons';
 import { Timezones } from 'src/app/util/timezones';
@@ -75,7 +75,9 @@ export class AddCustomerComponent implements OnInit {
   faComments = faComments;
   faStickyNote = faStickyNote;
   faCheck = faCheck;
-
+  faTags = faTags;
+  faHeading=faHeading;
+  faLink=faLink;
 
   constructor(countries: Countries, timezones: Timezones, private communicationTypeService: CommunicationTypeService, private customerService: CustomerService, public translate: TranslateService, private router: Router, private route: ActivatedRoute, private messageService: MessageService) {
     this.countries = countries.countriesArray;

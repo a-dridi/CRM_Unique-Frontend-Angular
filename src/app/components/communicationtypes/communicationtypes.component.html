@@ -7,24 +7,29 @@
     <div class="p-grid">
 
         <div class="p-col-12 p-md-12">
-            <div class="p-inputgroup group-field">
-                <span class="p-inputgroup-addon">
+            <div class="input-group-section group-field">
+                <div class="p-inputgroup-addon">
                     <fa-icon [icon]="faHeading"></fa-icon><span
                         class="inputgroup-custom-text">{{'communicationtypes.addCommunicationTypeTitle' | translate}}</span>
-                </span>
-                <input type="text" pInputText
-                    placeholder="{{'communicationtypes.addCommunicationTypeTitle' | translate}}"
-                    [(ngModel)]="addCommunicationTypeTitle">
+                </div>
+                <div class="add-communicationtype-section">
+                    <input class="add-communicationtype-field" type="text" pInputText
+                        placeholder="{{'communicationtypes.addCommunicationTypeTitle' | translate}}"
+                        [(ngModel)]="addCommunicationTypeTitle">
+                </div>
             </div>
         </div>
 
         <div class="p-col-12 p-md-12">
-            <div class="p-inputgroup group-field">
-                <span class="p-inputgroup-addon">
+            <div class="input-group-section group-field">
+                <div class="p-inputgroup-addon">
                     <fa-icon [icon]="faTint"></fa-icon><span
                         class="inputgroup-custom-text">{{'communicationtypes.addCommunicationTypeColorHex' | translate}}</span>
-                </span>
-                <p-colorPicker [(ngModel)]="addCommunicationTypeColorHex"></p-colorPicker>
+                </div>
+                <div class="add-colorhex-section">
+                    <p-colorPicker style="height: 50px; width: 70px" [(ngModel)]="addCommunicationTypeColorHex">
+                    </p-colorPicker>
+                </div>
             </div>
         </div>
 

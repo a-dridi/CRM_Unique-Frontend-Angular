@@ -1,5 +1,16 @@
+export interface Country {
+    name: string;
+    dial_code: string;
+    code: string;
+}
+
 export class Countries {
-    public countriesArray = [
+    public countriesArray: Country[] = [
+        {
+            "name": "  - ",
+            "dial_code": " ",
+            "code": " "
+        },
         {
             "name": "Afghanistan",
             "dial_code": "+93",

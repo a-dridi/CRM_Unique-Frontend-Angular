@@ -10,9 +10,9 @@ import { EditCustomerComponent } from './components/edit-customer/edit-customer.
 const routes: Routes = [
   { path: 'customers', component: AllcustomersComponent },
   { path: 'customer/add', component: AddCustomerComponent },
-  { path: 'customer/edit/{id}', component: EditCustomerComponent },
+  { path: 'customer/edit/:id', component: EditCustomerComponent },
   { path: 'communicationtypes', component: CommunicationtypesComponent },
-  { path: 'communicationtype/edit/{id}', component: EditCommunicationtypeComponent },
+  { path: 'communicationtype/edit/:id', component: EditCommunicationtypeComponent },
   { path: '', redirectTo: 'customers', pathMatch: 'full' }
 ];
 

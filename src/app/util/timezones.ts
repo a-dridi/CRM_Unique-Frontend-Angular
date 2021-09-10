@@ -1,3 +1,7 @@
+export interface Timezone {
+    timezone: string;
+}
+
 export class Timezones {
     public timezonesArray = [
         { "timezone": "UTC-12:00" },

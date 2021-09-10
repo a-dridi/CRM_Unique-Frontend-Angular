@@ -40,6 +40,9 @@ import { CommunicationtypesComponent } from './components/communicationtypes/com
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { MatDividerModule } from '@angular/material/divider';
 import { EditCommunicationtypeComponent } from './components/edit-communicationtype/edit-communicationtype.component';
+import { EditCommunicationMessageComponent } from './components/edit-communication-message/edit-communication-message.component';
+import { EditCustomerNoteComponent } from './components/edit-customer-note/edit-customer-note.component';
+import {PanelModule} from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,9 @@ import { EditCommunicationtypeComponent } from './components/edit-communicationt
     AgoDateStringFormatPipe,
     AddCustomerComponent,
     CommunicationtypesComponent,
-    EditCommunicationtypeComponent
+    EditCommunicationtypeComponent,
+    EditCommunicationMessageComponent,
+    EditCustomerNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +87,8 @@ import { EditCommunicationtypeComponent } from './components/edit-communicationt
     MatListModule,
     FontAwesomeModule,
     ColorPickerModule,
-    MatDividerModule
+    MatDividerModule,
+    PanelModule
   ],
   providers: [Countries, Timezones, CommunicationTypeService, CustomerService, ApiConfig, TranslateService, AppLanguages, AppLanguageLoaderHelper, MessageService],
   bootstrap: [AppComponent]

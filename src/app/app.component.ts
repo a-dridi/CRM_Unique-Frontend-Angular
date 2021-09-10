@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { AppLanguageLoaderHelper, AppLanguages, Language } from './util/languages.config';
 import { MediaMatcher } from '@angular/cdk/layout';
@@ -8,7 +8,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnDestroy, OnInit {
 
   //Listen for mobile devices
   responsiveMobileQuery: MediaQueryList;
@@ -20,18 +20,22 @@ export class AppComponent implements OnDestroy {
 
   private responsiveMobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private translate: TranslateService, private appLanguages: AppLanguages, private appLanguageLoaderHelper: AppLanguageLoaderHelper) {
-    this.selectedUserLanguageCode = this.appLanguageLoaderHelper.userLanguageCode;
-    this.selectedUserLanguageName = this.appLanguageLoaderHelper.getLanguageNameFromLanguageList(this.selectedUserLanguageCode);
-    this.translate.addLangs(this.appLanguages.languagesIsoCode);
-    this.translate.use(this.selectedUserLanguageCode);
-    this.translate.setDefaultLang(this.selectedUserLanguageCode);
-    this.availableLanguages = this.appLanguages.languages;
-
-    this.responsiveMobileQuery = media.matchMedia('(max-width: 600px)');
-    this.responsiveMobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.responsiveMobileQuery.addEventListener("DOMContentLoaded", this.responsiveMobileQueryListener);
+  constructor(private changeDetectorRef: ChangeDetectorRef,private media: MediaMatcher, private translate: TranslateService, private appLanguages: AppLanguages, private appLanguageLoaderHelper: AppLanguageLoaderHelper) {
   }
+
+ngOnInit() {
+  this.selectedUserLanguageCode = this.appLanguageLoaderHelper.userLanguageCode;
+  this.selectedUserLanguageName = this.appLanguageLoaderHelper.getLanguageNameFromLanguageList(this.selectedUserLanguageCode);
+  this.translate.addLangs(this.appLanguages.languagesIsoCode);
+  this.translate.use(this.selectedUserLanguageCode);
+  this.translate.setDefaultLang(this.selectedUserLanguageCode);
+  this.availableLanguages = this.appLanguages.languages;
+
+  this.responsiveMobileQuery = this.media.matchMedia('(max-width: 600px)');
+  this.responsiveMobileQueryListener = () => this.changeDetectorRef.detectChanges();
+  this.responsiveMobileQuery.addEventListener("DOMContentLoaded", this.responsiveMobileQueryListener);
+
+}
 
   ngOnDestroy(): void {
     this.responsiveMobileQuery.removeEventListener("DOMContentLoaded", this.responsiveMobileQueryListener);

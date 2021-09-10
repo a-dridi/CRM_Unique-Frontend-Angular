@@ -11,7 +11,7 @@ import { ApiConfig } from '../util/api.config';
 export class CommunicationTypeService {
 
   fullApiurl: string;
-  uri: string = "communicationtype";
+  uri: string = "communicationType";
 
   constructor(private httpClient: HttpClient, private apiConfig: ApiConfig) {
     this.fullApiurl = this.apiConfig.apiUrl + "/" + this.uri;
@@ -30,15 +30,16 @@ export class CommunicationTypeService {
       title: title,
       colorHex: colorHex
     };
-    return this.httpClient.post(`${this.fullApiurl}/add/`, newCommunicationType);
+    return this.httpClient.post(`${this.fullApiurl}/add`, newCommunicationType);
   }
 
   updateCommunicationType(id, title, colorHex) {
     const updatedCommunicationType = {
+      _id: id,
       title: title,
       colorHex: colorHex
     };
-    return this.httpClient.put(`${this.fullApiurl}/update/${id}`, updatedCommunicationType);
+    return this.httpClient.put(`${this.fullApiurl}/update`, updatedCommunicationType);
   }
 
   deleteCommunicationType(id) {

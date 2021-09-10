@@ -2,7 +2,7 @@ import { CommunicationMessage } from './communicationmessage.model';
 import { CustomerNote } from './customernote';
 
 export interface Customer {
-    customerId: number;
+    _id: string;
     companyName: string;
     forename: string;
     surname: string;
@@ -26,4 +26,5 @@ export interface Customer {
     note: string;
     communicationMessageList: CommunicationMessage[];
     customerNoteList: CustomerNote[];
+    deleted: boolean;
 }

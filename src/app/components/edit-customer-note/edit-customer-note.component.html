@@ -1,0 +1,62 @@
+<h3 class="header-text"><i class="pi pi-folder-open"></i> <span class="header-text">{{customerName}} {{'editCustomerNotes.siteTitle' | translate}}</span></h3>
+
+<div class="p-col-12 p-md-12 p-shadow-5 window-section">
+  <div class="sub-window-header">
+    <span class="sub-window-logo">
+      <fa-icon [icon]="faStickyNote"></fa-icon>
+    </span>
+    <span class="sub-window-title">
+      {{'editCustomer.customerNoteSectionTitle' | translate}}</span>
+  </div>
+
+  <p-dataView #customerNotes [value]="customerNotes" [paginator]="true" [rows]="1" filterBy="title"
+    [sortField]="customerNoteSortField" [sortOrder]="customerNoteSortOrder" layout="list">
+    <ng-template pTemplate="header">
+      <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+        <p-dropdown [options]="customerNoteSortOptions"
+          placeholder="{{'editCustomer.customerNotesSortPlaceHolder' | translate}}"
+          (onChange)="onCustomerNoteSortChange($event)" styleClass="p-mb-2 p-mb-md-0">
+        </p-dropdown>
+        <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+          <i class="pi pi-search"></i>
+          <input type="search" pInputText placeholder="Search by Name"
+            (input)="customerNotes.filter($event.target.value)">
+        </span>
+      </div>
+    </ng-template>
+    <ng-template let-customernote pTemplate="listItem">
+      <div class="p-col-12">
+        <div class="customernote-list-item">
+          <div class="customernote-list-detail">
+            <div class="customernote-title" [style]="{'border-bottom-style': 'solid', 'border-bottom-width': '1px'}"
+              [style.border-bottom-color]="customernote.type.colorHex" [style.color]="customernote.type.colorHex">
+              {{customernote.title}}</div>
+            <div class="customernote-description">{{customernote.description}}</div>
+            <div class="customernote-url"><a href="{{customernote.url}}">{{customernote.url}}</a></div>
+            <div class="customernote-date"><i class="pi pi-calendar-times"></i><span
+                class="createddate-text">{{customernote.createdDate | date: "dd/MM/yyyy hh:mm"}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
+  <div class="add-customernote-form">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="fas fa-heading"></i><span
+          class="inputgroup-custom-text">{{'editCustomer.customerNotesAddTitle' | translate}}</span></span>
+      <input type="text" pInputText placeholder="{{'editCustomer.customerNotesAddTitle' | translate}}"
+        [(ngModel)]="addCustomerNoteTitle">
+    </div>
+    <textarea rows="5" cols="30" pInputTextarea placeholder="{{'editCustomer.customerNotesAddDescription' | translate}}"
+      [(ngModel)]="addCustomerNoteDescription"></textarea>
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="fas fa-link"></i><span
+          class="inputgroup-custom-text">{{'editCustomer.customerNotesAddUrl' | translate}}</span></span>
+      <input type="text" pInputText placeholder="{{'editCustomer.customerNotesAddUrl' | translate}}"
+        [(ngModel)]="addCustomerNoteUrl">
+    </div>
+    <button class="add-customernote-button" pButton type="button" icon="pi pi-plus" iconPos="left"
+      label="{{'editCustomer.customerNotesAddButton' | translate}}" (click)="addNewCustomerNote()"></button>
+  </div>
+</div>

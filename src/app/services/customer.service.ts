@@ -24,7 +24,9 @@ export class CustomerService {
   }
 
   getCustomerById(id) {
+    this.httpClient
     return this.httpClient.get(`${this.fullApiurl}/get/byid/${id}`);
+
   }
 
   addCustomer(companyName, forename, surname, email, telephone, street, city, postcode, country, IBAN, BIC, bankInformation, website, facebookUrl, twitterUrl, linkedinUrl, xingUrl, socialmediaUrl, language, timezone, note, communicationMessagesArray, customerNotesArray) {
@@ -49,15 +51,14 @@ export class CustomerService {
       socialmediaUrl: socialmediaUrl,
       language: language,
       timezone: timezone,
-      note: note,
-      communicationMessageList: communicationMessagesArray,
-      customerNoteList: customerNotesArray
+      note: note
     };
-    return this.httpClient.post(`${this.fullApiurl}/add/`, newCustomer);
+    return this.httpClient.post(`${this.fullApiurl}/add`, newCustomer);
   }
 
   updateCustomer(id, companyName, forename, surname, email, telephone, street, city, postcode, country, IBAN, BIC, bankInformation, website, facebookUrl, twitterUrl, linkedinUrl, xingUrl, socialmediaUrl, language, timezone, note, communicationMessagesArray, customerNotesArray) {
     const updatedCustomer = {
+      _id: id,
       companyName: companyName,
       forename: forename,
       surname: surname,
@@ -78,11 +79,9 @@ export class CustomerService {
       socialmediaUrl: socialmediaUrl,
       language: language,
       timezone: timezone,
-      note: note,
-      communicationMessageList: communicationMessagesArray,
-      customerNoteList: customerNotesArray
+      note: note
     };
-    return this.httpClient.put(`${this.fullApiurl}/update/${id}`, updatedCustomer);
+    return this.httpClient.put(`${this.fullApiurl}/update`, updatedCustomer);
   }
 
   deleteCustomer(id) {

@@ -24,9 +24,9 @@ export class AddCustomerComponent implements OnInit {
   countries: Country[] = [];
   timezones: Timezone[] = [];
   communicationMessagesTypeArray: CommunicationType[] = [];
-  addCompanyName: string;
-  addForename: string;
-  addSurname: string;
+  addCompanyName: string = "";
+  addForename: string = "";
+  addSurname: string ="";
   addStreet: string;
   addPostcode: number;
   addCity: string;
@@ -101,6 +101,13 @@ export class AddCustomerComponent implements OnInit {
   addCustomer() {
     let customerCommunicationMessagesArray = [];
     let customerNotesArray = [];
+
+    if(this.addCompanyName.trim() === "" && this.addForename.trim() === "" && this.addSurname.trim() === "") {
+      this.translate.get(['errorMessages.addCustomerSaveTitle', 'errorMessages.addCustomerSaveDesc1']).subscribe(translations => {
+        this.messageService.add({ severity: 'error', life: 8000, summary: translations['errorMessages.addCustomerSaveTitle'], detail: translations['errorMessages.addCustomerSaveDesc1'] });
+      });
+      return;
+    }
 
     this.customerService.addCustomer(this.addCompanyName, this.addForename, this.addSurname, this.addEmail, this.addTelephone, this.addStreet, this.addCity, this.addPostcode, this.addCountry, this.addIban, this.addBic, this.addBankInformation, this.addWebsite, this.addFacebook, this.addTwitter, this.addLinkedin, this.addXing, this.addSocialMedia, this.addLanguage, this.addTimezone, this.addCustomerNote, customerCommunicationMessagesArray, customerNotesArray).subscribe((createdCustomer: Customer) => {
       this.router.navigate([`customer/edit/` + createdCustomer._id]);

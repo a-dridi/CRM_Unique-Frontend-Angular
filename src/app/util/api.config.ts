@@ -4,7 +4,7 @@ Saves the API access settings
 export class ApiConfig {
 
     //Add no tailing or leading slashes
-    private server = "https://crm.ardmail.net";
+    private server = "https://";
     private baseBackendApplicationUri="crmbackend";
     private baseApiUri = "data";
 

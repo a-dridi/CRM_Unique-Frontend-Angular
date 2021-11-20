@@ -1,16 +1,15 @@
 <h3 class="header-text"><i class="pi pi-user"></i> <span class="header-text">{{siteTitle}}</span></h3>
 <p-toast position="top-center"></p-toast>
-<p-tabView styleClass="tabview-submenu">
-  <p-tabPanel header="CustomerEdit" cache="false">
+<p-tabView styleClass="tabview-custom">
+  <p-tabPanel header="CustomerEdit" cache="false" >
     <ng-template pTemplate="header">
       <fa-icon [icon]="faUser"></fa-icon>
       <span class="tab-header">{{'editCustomerTab.customerTab' | translate}}</span>
     </ng-template>
-    <ng-template pTemplate="content">
       <div class="card edit-customers-table">
         <div class="p-grid">
           <!--Customer Details -->
-          <div class="p-col-12 p-md-12 p-lg-6">
+          <div class="p-col-12 p-md-12 p-lg-12">
             <div class="field-group">
               <div class="p-grid p-fluid">
                 <div class="p-col-12 p-md-4">
@@ -262,27 +261,45 @@
                 </div>
               </div>
             </div>
+
+            <div class="p-col-12 p-md-12">
+              <div class="p-inputgroup">
+                <textarea rows="5" cols="30" pInputTextarea placeholder="{{'addCustomer.noteTitle' | translate}}"
+                  [(ngModel)]="editCustomerNote"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-col-12 p-md-12">
+            <button class="save-button" label=" " icon="" iconPos="left" pButton type="button" (click)="saveCustomer()">
+              <span>
+                <fa-icon [icon]="faCheck"></fa-icon>
+              </span><span class="save-button-label">{{'editCustomer.saveButton' | translate}}</span>
+            </button>
           </div>
         </div>
       </div>
-    </ng-template>
   </p-tabPanel>
   <p-tabPanel header="CommunicationEdit" cache="false">
     <ng-template pTemplate="header">
       <fa-icon [icon]="faComment"></fa-icon>
       <span class="tab-header">{{'editCustomerTab.communicationTab' | translate}}</span>
     </ng-template>
-    <ng-template pTemplate="content">
-      <app-edit-communication-message></app-edit-communication-message>
-    </ng-template>
+    <app-edit-communication-message></app-edit-communication-message>
   </p-tabPanel>
   <p-tabPanel header="NoteEdit" cache="false">
     <ng-template pTemplate="header">
       <fa-icon [icon]="faFolderOpen"></fa-icon>
       <span class="tab-header">{{'editCustomerTab.noteTab' | translate}}</span>
     </ng-template>
-    <ng-template pTemplate="content">
-      <app-edit-customer-note></app-edit-customer-note>
-    </ng-template>
+    <app-edit-customer-note></app-edit-customer-note>
   </p-tabPanel>
+  <p-tabPanel header="MailReminder" cache="false">
+    <ng-template pTemplate="header">
+      <fa-icon [icon]="faBell"></fa-icon>
+      <span class="tab-header">{{'editCustomerTab.mailReminderTab' | translate}}</span>
+    </ng-template>
+     <h3>MailReminder</h3>
+  </p-tabPanel>
+
 </p-tabView>

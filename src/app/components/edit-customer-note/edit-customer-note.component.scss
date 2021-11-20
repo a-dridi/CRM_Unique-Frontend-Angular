@@ -1,9 +1,8 @@
 .header-text {
-    margin: 15px;
     font-weight: bold;
 }
 
-.customernote-title{
+.customernote-title {
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 2px;
@@ -11,4 +10,43 @@
 
 .pi {
     font-size: 2rem !important;
+}
+
+.header-text {
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.header-text > i {
+    margin-right: 8px;
+}
+
+.sub-window-header {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.sub-window-logo {
+    font-size: 20px;
+}
+
+.sub-window-title {
+    font-size: 20px;
+}
+
+.padded-window {
+    padding-right: 15px;
+}
+
+.add-customernote-form {
+    margin: 15px;
+}
+
+.p-inputgroup {
+    margin-bottom: 15px;
+}
+
+.add-customernote-button {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

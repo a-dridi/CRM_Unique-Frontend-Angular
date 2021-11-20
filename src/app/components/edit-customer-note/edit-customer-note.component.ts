@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faStickyNote } from '@fortawesome/free-solid-svg-icons';
+import { faNotesMedical, faStickyNote } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
 import { MessageService, SelectItem } from 'primeng/api';
+import { CommunicationMessage } from 'src/app/model/communicationmessage.model';
+import { CommunicationType } from 'src/app/model/communicationtype';
 import { Customer } from 'src/app/model/customer.model';
 import { CustomerNote } from 'src/app/model/customernote';
 import { CustomerNoteService } from 'src/app/services/customer-note.service';
@@ -14,8 +16,6 @@ import { CustomerService } from 'src/app/services/customer.service';
   styleUrls: ['./edit-customer-note.component.scss']
 })
 export class EditCustomerNoteComponent implements OnInit {
-  faStickyNote = faStickyNote;
-
   //Error/Info text message
   errorMessageTitleSaveNote;
   errorMessageDescriptionSaveNote;
@@ -29,11 +29,22 @@ export class EditCustomerNoteComponent implements OnInit {
   selectedId: number;
   customerName: string;
 
-  customerNotes: CustomerNote[];
+  customerNotes: CustomerNote[] = [];
 
   addCustomerNoteTitle: string;
   addCustomerNoteDescription: string;
   addCustomerNoteUrl: string;
+
+  faNotesMedical = faNotesMedical;
+  faStickyNote = faStickyNote;
+
+  communicationMessageSortOrder: number;
+  communicationMessageSortOptions: SelectItem[];
+  communicationMessageSortField: string;
+
+  communicationMessagesTypeArray: CommunicationType[] = [];
+  communicationMessages: CommunicationMessage[];
+
 
   constructor(private customerNoteService: CustomerNoteService, private customerService: CustomerService, public translate: TranslateService, private router: Router, private route: ActivatedRoute, private messageService: MessageService) { }
 
@@ -87,6 +98,20 @@ export class EditCustomerNoteComponent implements OnInit {
       this.customerNotes = data;
     });
   }
+
+  onCommunicationMessageSortChange(event) {
+    let value = event.value;
+
+    if (value.indexOf('!') === 0) {
+      this.communicationMessageSortOrder = -1;
+      this.communicationMessageSortField = value.substring(1, value.length);
+    }
+    else {
+      this.communicationMessageSortOrder = 1;
+      this.communicationMessageSortField = value;
+    }
+  }
+
 
   addNewCustomerNote() {
     this.customerNoteService.addCustomerNote(this.selectedId, this.addCustomerNoteTitle, this.addCustomerNoteDescription, this.addCustomerNoteUrl).subscribe(() => {

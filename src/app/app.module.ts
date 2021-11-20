@@ -39,10 +39,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommunicationtypesComponent } from './components/communicationtypes/communicationtypes.component';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { MatDividerModule } from '@angular/material/divider';
+import { TabViewModule } from 'primeng/tabview';
 import { EditCommunicationtypeComponent } from './components/edit-communicationtype/edit-communicationtype.component';
 import { EditCommunicationMessageComponent } from './components/edit-communication-message/edit-communication-message.component';
 import { EditCustomerNoteComponent } from './components/edit-customer-note/edit-customer-note.component';
-import {PanelModule} from 'primeng/panel';
+import { MailReminderComponent } from './components/mail-reminder/mail-reminder.component';
+import { CalendarModule } from 'primeng/calendar';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,8 @@ import {PanelModule} from 'primeng/panel';
     CommunicationtypesComponent,
     EditCommunicationtypeComponent,
     EditCommunicationMessageComponent,
-    EditCustomerNoteComponent
+    EditCustomerNoteComponent,
+    MailReminderComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +92,9 @@ import {PanelModule} from 'primeng/panel';
     FontAwesomeModule,
     ColorPickerModule,
     MatDividerModule,
-    PanelModule
+    TabViewModule,
+    CalendarModule,
+    AngularEditorModule,
   ],
   providers: [Countries, Timezones, CommunicationTypeService, CustomerService, ApiConfig, TranslateService, AppLanguages, AppLanguageLoaderHelper, MessageService],
   bootstrap: [AppComponent]

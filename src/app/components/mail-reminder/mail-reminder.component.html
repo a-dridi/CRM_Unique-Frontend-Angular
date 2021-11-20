@@ -1,0 +1,56 @@
+<h4 class="sub-header"><i class="pi pi-plus-circle"></i> <span
+    class="sub-header-text">{{'createMailReminder.createTitle' | translate}}</span></h4>
+<div class="p-grid p-fluid">
+  <div class="p-col-12 p-md-12">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon"><i class="pi pi-tag"></i></span>
+      <input type="text" [(ngModel)]="addReminderTitle" pInputText
+        placeholder="{{'createMailReminder.formAddTitle' | translate}}">
+    </div>
+  </div>
+
+  <div class="p-col-12 p-md-12">
+    <input type="text" pInputText placeholder="{{'createMailReminder.formAddTitle' | translate}}">
+    <angular-editor [(ngModel)]="addReminderText" [config]="editorConfig"
+      [placeholder]="addReminderTitlePlaceholder"></angular-editor>
+  </div>
+
+  <div class="p-field p-col-12 p-md-12">
+    <p-calendar [(ngModel)]="addReminderDate" [showIcon]="true"></p-calendar>
+  </div>
+
+  <div class="p-col-12 p-md-12">
+    <button class="add-button" label=" " icon="" iconPos="left" pButton type="button" (click)="addReminder()">
+      <span>
+        <fa-icon [icon]="faPlus"></fa-icon>
+      </span><span class="add-button-label">{{'createMailReminder.formAddButton' | translate}}</span>
+    </button>
+  </div>
+</div>
+<br>
+<br>
+<h4 class="sub-header"><i class="pi pi-list"></i> <span
+    class="sub-header-text">{{'createMailReminder.allTitle' | translate}}</span></h4>
+<div class="p-grid p-fluid">
+  <p-dataView #mailRemindersList [value]="mailReminders" [paginator]="true" [rows]="9" filterBy="reminderTitle"
+     layout="list">
+    <ng-template pTemplate="header">
+      <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+        <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+          <i class="pi pi-search"></i>
+          <input type="search" pInputText placeholder="{{'createMailReminder.searchTitle' | translate}}"
+            (input)="mailRemindersList.filter($event.target.value)" />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template let-mailReminderItem pTemplate="listItem">
+      <div class="p-col-12">
+        <div class="mailreminder-list-item">
+          <div class="mailreminder-title">{{mailReminderItem.reminderTitle}}</div>
+          <div class="mailreminder-date"><span class="mailreminder-date-icon"><i
+                class="pi pi-calendar"></i></span>{{mailReminderItem.reminderDate | date: 'dd.MM.yyyy'}}</div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
+</div>

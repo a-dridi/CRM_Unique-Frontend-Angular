@@ -9,7 +9,7 @@ import { CustomerNote } from 'src/app/model/customernote';
 import { CommunicationTypeService } from 'src/app/services/communicationtype.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { Countries, Country } from 'src/app/util/countries';
-import { faRoad, faSuitcase, faUser, faMapMarkerAlt, faCity, faGlobeAmericas, faAt, faPhone, faMoneyCheck, faUniversity, faMoneyCheckAlt, faShareAlt, faLanguage, faClock, faComments, faStickyNote, faCheck, faComment, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
+import { faRoad, faSuitcase, faUser, faMapMarkerAlt, faCity, faGlobeAmericas, faAt, faPhone, faMoneyCheck, faUniversity, faMoneyCheckAlt, faShareAlt, faLanguage, faClock, faComments, faStickyNote, faCheck, faComment, faFolderOpen, faBell } from '@fortawesome/free-solid-svg-icons';
 import { faUser as farUser, } from '@fortawesome/free-regular-svg-icons';
 import { faInternetExplorer, faFacebook, faTwitter, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons';
 import { Timezone, Timezones } from 'src/app/util/timezones';
@@ -33,7 +33,7 @@ export class EditCustomerComponent implements OnInit {
   selectedCustomer: Customer;
   customerCommunicationMessagesArray: CommunicationMessage[];
   customerNotesArray: CustomerNote[];
-  selectedId: number;
+  selectedId: string;
   editCompanyName: string;
   editForename: string;
   editSurname: string;
@@ -82,6 +82,7 @@ export class EditCustomerComponent implements OnInit {
   faCheck = faCheck;
   faComment = faComment;
   faFolderOpen = faFolderOpen;
+  faBell = faBell;
   
   selectedCountry: Country;
   selectedTimezone: Timezone;
@@ -103,7 +104,7 @@ export class EditCustomerComponent implements OnInit {
       this.selectedId = params.id;
       this.customerService.getCustomerById(this.selectedId).subscribe((res: Customer) => {
         this.selectedCustomer = res;
-        if (this.selectedCustomer.forename !== "") {
+        if (this.selectedCustomer.companyName.trim() !== "" && this.selectedCustomer.forename.trim() !== "") {
           this.siteTitle = this.selectedCustomer.companyName + " - " + this.selectedCustomer.forename + " " + this.selectedCustomer.surname;
         } else {
           this.siteTitle = this.selectedCustomer.companyName;

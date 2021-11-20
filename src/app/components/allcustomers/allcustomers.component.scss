@@ -1,6 +1,7 @@
 .header-text {
     margin: 15px;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .pi {
@@ -12,7 +13,7 @@
 }
 
 .all-customers-table {
-    margin-top: 10px;
+    margin: 20px 10px 10px 10px;
 }
 
 :host ::ng-deep {

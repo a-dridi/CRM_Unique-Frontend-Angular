@@ -42,6 +42,7 @@ export class AllcustomersComponent implements OnInit {
   deleteCustomer(id) {
     this.customerService.deleteCustomer(id).subscribe(
       () => {
+        this.loadCustomers();
       },
       err => {
         this.messageService.add({ severity: 'error', life: 8000, summary: this.errorMessagedeleteCustomerTitle, detail: this.errorMessagedeleteCustomerDescription });

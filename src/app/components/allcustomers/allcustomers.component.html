@@ -23,8 +23,8 @@
                 <td>{{customer.email}}</td>
                 <td>{{customer.telephone}}</td>
                 <td>
-                    <button class="edit-button" pButton type="button" icon="pi pi-folder-open" iconPos="left" label="{{'customers.tableCellEditButton' | translate}}" (click)="editCustomer(customer.customerId)"></button>
-                    <button class="delete-button" pButton type="button" icon="pi pi-times-circle" iconPos="left" label="{{'customers.tableCellDeleteButton' | translate}}" (click)="deleteCustomer(customer.customerId)"></button>
+                    <button class="edit-button" pButton type="button" icon="pi pi-folder-open" iconPos="left" label="{{'customers.tableCellEditButton' | translate}}" (click)="editCustomer(customer._id)"></button>
+                    <button class="delete-button" pButton type="button" icon="pi pi-times-circle" iconPos="left" label="{{'customers.tableCellDeleteButton' | translate}}" (click)="deleteCustomer(customer._id)"></button>
                 </td>
             </tr>
         </ng-template>

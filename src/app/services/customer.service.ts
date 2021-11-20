@@ -25,7 +25,7 @@ export class CustomerService {
 
   getCustomerById(id) {
     this.httpClient
-    return this.httpClient.get(`${this.fullApiurl}/get/byid/${id}`);
+    return this.httpClient.get(`${this.fullApiurl}/get/byId/${id}`);
 
   }
 
@@ -85,7 +85,7 @@ export class CustomerService {
   }
 
   deleteCustomer(id) {
-    return this.httpClient.delete(`${this.fullApiurl}/delete/${id}`);
+    return this.httpClient.delete(`${this.fullApiurl}/delete/byId/${id}`);
   }
 
 }

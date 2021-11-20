@@ -1,13 +1,51 @@
 .header-text {
-    margin: 15px;
+    margin-bottom: 25px;
     font-weight: bold;
 }
 
-.message-communicationType-title{
+.header-text > i {
+    margin-right: 8px;
+}
+
+.message-communicationType-title {
     font-weight: bold;
     padding: 4px;
 }
 
 .pi {
     font-size: 2rem !important;
+}
+
+.sub-window-header {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.sub-window-logo {
+    font-size: 20px;
+}
+
+.sub-window-title {
+    font-size: 20px;
+}
+
+.padded-window {
+    padding-right: 15px;
+}
+
+.add-communicationmessage-form {
+    margin: 15px;
+}
+
+.form-element {
+    margin-bottom: 15px;
+}
+
+.input-form-desc {
+    padding: 10px;
+}
+
+.add-communicationmessage-button{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

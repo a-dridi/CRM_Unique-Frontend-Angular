@@ -6,12 +6,28 @@
     "editCustomerUpdateDescription": "Customer could not be updated!",
     "addCustomerSaveTitle": "Saving Error",
     "editCustomerSaveDescription": "Customer could not be added!",
+    "addCustomerSaveDesc1": "Please enter the company name or forename/surname!",
     "communicationtypeDeleteTitle": "Delete Error",
     "communicationtypeDeleteDescription": "Communication Type could not be deleted!",
     "communicationtypeUpdateTitle": "Update Error",
     "communicationtypeUpdateDescription": "Communication Type could not be updated!",
-    "communicationtypeSaveTitle": "Saving Error",
-    "communicationtypeSaveDescription": "Communication Type could not be added!"
+    "customernoteSaveTitle": "Saving Error",
+    "customernoteSaveDescription": "Customer Note could not be added!",
+    "communicationmessageSaveTitle": "Saving Error",
+    "communicationmessageSaveDescription": "Communication Message could not be added!",
+    "mailReminderSaveErrorTitle": "ERROR",
+    "mailReminderTitle": "Please enter a title for your reminder!",
+    "mailReminderText": "Please enter the content for your reminder!",
+    "mailReminderDate": "Please select a date for your reminder!",
+    "mailReminderSaveError": "Mail Reminder coult not be created!"
+  },
+  "successMessages": {
+    "customernoteSaveTitle": "OK",
+    "customernoteSaveDescription": "Customer Note added.",
+    "communicationmessageSaveTitle": "OK",
+    "communicationmessageSaveDescription": "Communication Message added.",
+    "mailReminder": "OK. Mail Reminder was created.",
+    "mailReminderSaveOKTitle": "OK"
   },
   "siteMenu": {
     "customersMenuPoint": "Customers",
@@ -26,13 +42,29 @@
     "tableHeaderEmail": "Email",
     "tableHeaderPhone": "Phone",
     "tableCellEditButton": "Edit",
-    "tableCellDeleteButton": "Delete"
+    "tableCellDeleteButton": "Delete",
+    "saveButton": "Add"
   },
   "editCommunicationMessage": {
     "siteTitle": " - Communication Messages"
   },
   "editCustomerNotes": {
     "siteTitle": " - Notes"
+  },
+  "createMailReminder": {
+    "createTitle": "New Mail Reminder",
+    "formAddTitle": "Mail Subject",
+    "formAddContent": "Mail Content",
+    "formAddDate": "Send Date",
+    "formAddButton":"Create Reminder",
+    "allTitle": "All Mail Reminders",
+    "searchTitle": "Search by Title"
+  },
+  "editCustomerTab": {
+    "customerTab": "Customer",
+    "communicationTab": "Communication Messages",
+    "noteTab": "Notes",
+    "mailReminderTab": "Reminder"
   },
   "editCustomer": {
     "siteTitle": "Edit Customer",
@@ -74,7 +106,10 @@
     "communicationMesssageSortOptionDateAsc": "Date Ascending",
     "communicationMesssageSortOptionDateDesc": "Date Descending",
     "customerNoteSortOptionDateAsc": "Date Ascending",
-    "customerNoteSortOptionDateDesc": "Date Descending"
+    "customerNoteSortOptionDateDesc": "Date Descending",
+    "newCommunicationMessageSectionTitle": "New Communication Message",
+    "allCustomerNoteSectionTitle": "All Customer Notes",
+    "newCustomerNoteSectionTitle": "New Customer Note"
   },
   "addCustomer": {
     "siteTitle": "New Customer",

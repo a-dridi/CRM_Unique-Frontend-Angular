@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faComments } from '@fortawesome/free-solid-svg-icons';
+import { faCommentMedical, faComments, faTags } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
 import { MessageService, SelectItem } from 'primeng/api';
 import { CommunicationMessage } from 'src/app/model/communicationmessage.model';
@@ -18,6 +18,8 @@ import { CustomerService } from 'src/app/services/customer.service';
 export class EditCommunicationMessageComponent implements OnInit {
 
   faComments = faComments;
+  faCommentMedical = faCommentMedical;
+  faTags = faTags;
 
   //Error/Info text message
   errorMessageTitleSaveCommunication;
